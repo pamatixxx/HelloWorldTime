@@ -10,13 +10,13 @@
 <build>
     <resources>
     <resource>
-        <directory>../HelloWorldTime1/src/main/resources/GreetingsBundle_en_US.properties</directory>
+        <directory>GreetingsBundle_en_US.properties</directory>
     </resource>
     <resource>
-        <directory>../HelloWorldTime1/src/main/resources/GreetingsBundle_ru_RU.properties</directory>
+        <directory>GreetingsBundle_ru_RU.properties</directory>
     </resource>
     <resource>
-        <directory>../HelloWorldTime1/src/main/resources/log4.properties</directory>
+        <directory>log4.properties</directory>
     </resource>
     </resources>
 </build>
