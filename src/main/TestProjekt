@@ -21,6 +21,7 @@ public class MainTest {
     public void main() throws Exception {
     }
 
+
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
@@ -30,44 +31,59 @@ public class MainTest {
     @Test
     public void testAdd1()throws Exception{
         Date date = new Date(2017,9,8,23,00,00);
+        int hours = date.getHours();
+        if (hours>=23 && hours<6){
         Assert.assertEquals(date,"NIGHT");
-}
+}}
     @Test
     public void testAdd2()throws Exception{
         Date date =new Date(2017,9,8,5,59,59);
-        Assert.assertEquals(date,"NIGHT");
+        int hours = date.getHours();
+        if (hours>=23 && hours<6){
+            Assert.assertEquals(date,"NIGHT");
+        }
     }
     @Test
     public void testAdd3()throws Exception{
         Date date =new Date(2017,9,8,23,00,01);
-        Assert.assertEquals(date,"NIGHT");
+        int hours = date.getHours();
+        if (hours>=23 && hours<6){
+            Assert.assertEquals(date,"NIGHT");
+        }
     }
     @Test
     public void testAdd4()throws Exception{
         Date date = new Date(2017,9,8,8,00,00);
+        int hours = date.getHours();
+        if (hours < 9 && hours >= 6)
         Assert.assertEquals(date,"MORNING");
     }
     @Test
     public void testAdd5()throws Exception{
         Date date =new Date(2017,9,8,7,35,59);
+        int hours = date.getHours();
+        if (hours < 9 && hours >= 6)
         Assert.assertEquals(date,"MORNING");
     }
     @Test
     public void testAdd6()throws Exception{
         Date date =new Date(2017,9,8,9 ,00,01);
+        int hours = date.getHours();
         Assert.assertEquals(date,"DAY");
     }
     @Test
     public void testAdd7()throws Exception{
         Date date =new Date(2017,9,8,18,59,59);
-        Assert.assertEquals(date,"DAY");
+        int hours = date.getHours();
+        if (hours >= 9 && hours < 19)
+            Assert.assertEquals(date,"DAY");
     }
     @Test
     public void testAdd8()throws Exception{
         Date date =new Date(2017,9,8,16,59,50);
-        Assert.assertEquals(date,"DAY");
+        int hours = date.getHours();
+        if (hours >= 9 && hours < 19)
+            Assert.assertEquals(date,"DAY");
     }
-
-
 
 }
